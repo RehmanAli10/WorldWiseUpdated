@@ -1,32 +1,22 @@
 import { useParams } from "react-router-dom";
-import { useEffect } from "react";
-import { useCities } from "../contexts/CitiesContext";
+
 import BackButton from "./BackButton";
 import Spinner from "../components/Spinner";
 
 import styles from "./City.module.css";
 
-const formatDate = (date) =>
-  new Intl.DateTimeFormat("en", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-    weekday: "long",
-  }).format(new Date(date));
+import { formatDate } from "../utils/helpers";
+
+import { useCities } from "../hooks/useCities";
 
 function City() {
-  const { getCity, currentCity, isLoading } = useCities();
+  const { cities, isLoading } = useCities();
 
   const { id } = useParams();
 
-  useEffect(
-    function () {
-      getCity(id);
-    },
-    [id, getCity]
-  );
+  let filteredCities = cities?.filter((currCity) => currCity.id === Number(id));
 
-  const { cityName, emoji, date, notes } = currentCity;
+  const { cityName, emoji, date, notes } = filteredCities[0];
 
   if (isLoading) return <Spinner />;
 

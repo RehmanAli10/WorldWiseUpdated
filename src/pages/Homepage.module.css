@@ -32,3 +32,40 @@
   color: var(--color-light--1);
   margin-bottom: 2.5rem;
 }
+
+.cta {
+  font-size: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--color-primary);
+  color: var(--color-light--1);
+  text-decoration: none;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s;
+}
+
+.cta:hover {
+  background-color: var(--color-primary-dark);
+}
+
+/* Media Queries for Responsiveness */
+
+/* Tablets and below */
+@media (max-width: 878px) {
+  .homepage {
+    margin: 2rem;
+    padding: 2rem 3rem;
+  }
+
+  .homepage h1 {
+    font-size: 3.5rem;
+  }
+
+  .homepage h2 {
+    font-size: 1.5rem;
+  }
+
+  .cta {
+    font-size: 1.25rem;
+    padding: 0.6rem 1.2rem;
+  }
+}

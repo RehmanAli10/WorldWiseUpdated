@@ -32,3 +32,71 @@ a.ctaLink:visited {
   padding: 0.8rem 2rem;
   border-radius: 7px;
 }
+
+/* Media Queries for Responsiveness */
+
+/* Desktops and larger tablets */
+@media (max-width: 1076px) {
+  .nav {
+    margin-bottom: 2.6rem;
+  }
+}
+
+/* Tablets and below */
+@media (max-width: 790px) {
+  .nav ul {
+    gap: 2rem;
+  }
+
+  .nav a:link,
+  .nav a:visited {
+    font-size: 1.2rem;
+  }
+
+  a.ctaLink:link,
+  a.ctaLink:visited {
+    padding: 0.6rem 1.5rem;
+  }
+}
+
+@media (max-width: 770px) {
+  .nav ul {
+    gap: 2rem;
+    margin: 3.2rem;
+  }
+
+  .nav a:link,
+  .nav a:visited {
+    font-size: 1.2rem;
+  }
+
+  a.ctaLink:link,
+  a.ctaLink:visited {
+    padding: 0.6rem 1.5rem;
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 480px) {
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav ul {
+    flex-direction: column;
+    gap: 1.6rem;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .nav a:link,
+  .nav a:visited {
+    font-size: 1rem;
+  }
+
+  a.ctaLink:link,
+  a.ctaLink:visited {
+    padding: 0.5rem 1rem;
+  }
+}

@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import PageNav from "../components/PageNav";
 import Button from "../components/Button";
-import { useAuth } from "../contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
 
 import styles from "./Login.module.css";
@@ -13,18 +12,19 @@ function Login() {
 
   const navigate = useNavigate();
 
-  const { login, isAuthenticated } = useAuth();
+  // const { login, isAuthenticated } = useAuth();
 
-  useEffect(
-    function () {
-      if (isAuthenticated) navigate("/app", { replace: true });
-    },
-    [isAuthenticated, navigate]
-  );
+  // useEffect(
+  //   function () {
+  //     if (isAuthenticated) navigate("/app", { replace: true });
+  //   },
+  //   [isAuthenticated, navigate]
+  // );
 
   function handleSubmit(e) {
     e.preventDefault();
-    login(email, password);
+    navigate("/app", { replace: true });
+    // login(email, password);
   }
 
   return (

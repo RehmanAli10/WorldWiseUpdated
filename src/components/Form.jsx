@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useUrlPosition } from "../hooks/useUrlPosition";
-import { useCities } from "../contexts/CitiesContext";
 import Button from "./Button";
 import BackButton from "./BackButton";
 import Spinner from "./Spinner";
@@ -10,20 +9,15 @@ import ReactDatePicker from "react-datepicker";
 
 import "react-datepicker/dist/react-datepicker.css";
 import styles from "./Form.module.css";
+import { useCreateCity } from "../hooks/useCreateCity";
 
-export function convertToEmoji(countryCode) {
-  const codePoints = countryCode
-    .toUpperCase()
-    .split("")
-    .map((char) => 127397 + char.charCodeAt());
-  return String.fromCodePoint(...codePoints);
-}
+import { convertToEmoji } from "../utils/helpers";
 
 const BASE_URL = "https://api.bigdatacloud.net/data/reverse-geocode-client";
 
 function Form() {
   const naviagte = useNavigate();
-  const { createCity, isLoading } = useCities();
+  const { isCreating, creatingCity } = useCreateCity();
   const [isLoadingGeocoding, setisLoadingGeocoding] = useState(false);
   const [cityName, setCityName] = useState("");
   const [country, setCountry] = useState("");
@@ -84,7 +78,7 @@ function Form() {
         lng,
       },
     };
-    await createCity(newCity);
+    creatingCity(newCity);
     naviagte("/app/cities");
   }
 
@@ -97,7 +91,7 @@ function Form() {
 
   return (
     <form
-      className={`${styles.form} ${isLoading ? styles.loading : ""}`}
+      className={`${styles.form} ${isCreating ? styles.loading : ""}`}
       onSubmit={handleFormSubmit}
     >
       <div className={styles.row}>

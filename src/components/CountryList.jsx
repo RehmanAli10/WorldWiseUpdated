@@ -1,4 +1,4 @@
-import { useCities } from "../contexts/CitiesContext";
+import { useCities } from "../hooks/useCities";
 import CountryItem from "./CountryItem";
 
 import styles from "./CountryList.module.css";
