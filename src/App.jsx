@@ -12,6 +12,7 @@ import SpinnerFullPage from "./components/SpinnerFullPage.jsx";
 // import ProtectedRoutes from "./pages/ProtectedRoutes.jsx";
 import PageNotFound from "./pages/PageNotFound.jsx";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import Signup from "./pages/Signup.jsx";
 
 const Homepage = lazy(() => import("./pages/Homepage.jsx"));
 const Pricing = lazy(() => import("./pages/Pricing.jsx"));
@@ -38,6 +39,7 @@ function App() {
             <Route path="pricing" element={<Pricing />} />
             <Route path="product" element={<Product />} />
             <Route path="login" element={<Login />} />
+            <Route path="signup" element={<Signup />} />
 
             <Route
               path="app"

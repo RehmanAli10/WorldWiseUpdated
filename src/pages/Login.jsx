@@ -51,8 +51,11 @@ function Login() {
           />
         </div>
 
-        <div>
+        <div className={styles.buttons}>
           <Button type="primary">Login</Button>
+          <Button type="primary" onClick={() => navigate("/signup")}>
+            Signup
+          </Button>
         </div>
       </form>
     </main>
