@@ -1,20 +1,22 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import PageNav from "../components/PageNav";
 import Button from "../components/Button";
-import { useNavigate } from "react-router-dom";
 
 import styles from "./Login.module.css";
+import { useSignup } from "../hooks/useSignup";
 
 function Signup() {
-  // PRE-FILLED FOR DEVELOPMENT PURPOSES
-  const [email, setEmail] = useState("rehman@example.com");
-  const [password, setPassword] = useState("qwerty");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  const navigate = useNavigate();
+  const { signup, isLoading } = useSignup();
 
   function handleSubmit(e) {
     e.preventDefault();
-    navigate("/login", { replace: true });
+    signup({ email, password });
+
+    setEmail("");
+    setPassword("");
   }
 
   return (
@@ -42,9 +44,7 @@ function Signup() {
         </div>
 
         <div className={styles.buttons}>
-          <Button type="primary" onClick={() => navigate("/signup")}>
-            Signup
-          </Button>
+          <Button type="primary">Signup</Button>
         </div>
       </form>
     </main>

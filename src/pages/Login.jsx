@@ -4,13 +4,16 @@ import Button from "../components/Button";
 import { useNavigate } from "react-router-dom";
 
 import styles from "./Login.module.css";
+import { useLogin } from "../hooks/useLogin";
 
 function Login() {
   // PRE-FILLED FOR DEVELOPMENT PURPOSES
-  const [email, setEmail] = useState("rehman@example.com");
-  const [password, setPassword] = useState("qwerty");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const navigate = useNavigate();
+
+  const { login, isLoggingIn } = useLogin();
 
   // const { login, isAuthenticated } = useAuth();
 
@@ -22,9 +25,10 @@ function Login() {
   // );
 
   function handleSubmit(e) {
+    if (!email || !password) return;
+
     e.preventDefault();
-    navigate("/app", { replace: true });
-    // login(email, password);
+    login({ email, password });
   }
 
   return (
