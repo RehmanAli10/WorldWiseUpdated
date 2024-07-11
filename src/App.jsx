@@ -8,9 +8,7 @@ import City from "./components/City.jsx";
 import Form from "./components/Form.jsx";
 import SpinnerFullPage from "./components/SpinnerFullPage.jsx";
 
-// import { AuthProvider } from "./contexts/AuthContext.jsx";
-
-// import ProtectedRoutes from "./pages/ProtectedRoutes.jsx";
+import ProtectedRoutes from "./pages/ProtectedRoutes.jsx";
 import PageNotFound from "./pages/PageNotFound.jsx";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Signup from "./pages/Signup.jsx";
@@ -32,7 +30,6 @@ const queryClient = new QueryClient({
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      {/* <AuthProvider> */}
       <Suspense fallback={<SpinnerFullPage />}>
         <BrowserRouter>
           <Routes>
@@ -45,9 +42,9 @@ function App() {
             <Route
               path="app"
               element={
-                // <ProtectedRoutes>
-                <AppLayout />
-                // </ProtectedRoutes>
+                <ProtectedRoutes>
+                  <AppLayout />
+                </ProtectedRoutes>
               }
             >
               <Route index element={<Navigate replace to="cities" />} />
@@ -61,7 +58,7 @@ function App() {
           </Routes>
         </BrowserRouter>
       </Suspense>
-      {/* </AuthProvider> */}
+
       <Toaster
         position="top-center"
         gutter={12}
