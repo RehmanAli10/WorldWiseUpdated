@@ -1,20 +1,20 @@
-// import { useNavigate } from "react-router-dom";
-// import { useAuth } from "../contexts/AuthContext";
-// import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import { useUser } from "../hooks/useUser";
 
-// function ProtectedRoutes({ children }) {
-//   const { isAuthenticated } = useAuth();
+function ProtectedRoutes({ children }) {
+  const { isAuthenticated } = useUser();
 
-//   const navigate = useNavigate();
+  const navigate = useNavigate();
 
-//   useEffect(
-//     function () {
-//       if (!isAuthenticated) navigate("/");
-//     },
-//     [isAuthenticated, navigate]
-//   );
+  useEffect(
+    function () {
+      if (!isAuthenticated) navigate("/");
+    },
+    [isAuthenticated, navigate]
+  );
 
-//   return isAuthenticated ? children : null;
-// }
+  return isAuthenticated ? children : null;
+}
 
-// export default ProtectedRoutes;
+export default ProtectedRoutes;
