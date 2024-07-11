@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import PageNav from "../components/PageNav";
 import Button from "../components/Button";
 import { useNavigate } from "react-router-dom";
+import { FcGoogle } from "react-icons/fc";
 
 import styles from "./Login.module.css";
 import { useLogin } from "../hooks/useLogin";
@@ -13,16 +14,7 @@ function Login() {
 
   const navigate = useNavigate();
 
-  const { login, isLoggingIn } = useLogin();
-
-  // const { login, isAuthenticated } = useAuth();
-
-  // useEffect(
-  //   function () {
-  //     if (isAuthenticated) navigate("/app", { replace: true });
-  //   },
-  //   [isAuthenticated, navigate]
-  // );
+  const { login } = useLogin();
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -61,6 +53,8 @@ function Login() {
           <Button type="primary" onClick={() => navigate("/signup")}>
             Signup
           </Button>
+          <p>Or</p>
+          <FcGoogle className={styles.googleIcon} />
         </div>
       </form>
     </main>

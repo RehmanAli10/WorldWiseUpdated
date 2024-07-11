@@ -3,6 +3,8 @@
   padding: 2.5rem 5rem;
   background-color: var(--color-dark--1);
   min-height: calc(100vh - 5rem);
+  justify-content: center;
+  align-items: center;
 }
 
 .form {
@@ -22,20 +24,51 @@
   flex-direction: column;
   gap: 0.5rem;
 }
+
 .buttons {
   display: flex;
+  flex-direction: column;
   gap: 1.2rem;
+  align-items: center;
 }
 
-@media (max-width: 768px) {
+.buttons p {
+  font-size: 1.6rem;
+  padding: 1.2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.googleIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2.6rem;
+  width: 2.6rem;
+  margin-top: 1rem;
+}
+
+@media (max-width: 1024px) {
   .login {
-    margin: 1.5rem;
+    margin: 2rem;
     padding: 2rem;
   }
 
   .form {
     padding: 1.5rem 2rem;
     margin: 1.5rem auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .login {
+    margin: 1.5rem;
+    padding: 1.5rem;
+  }
+
+  .form {
+    padding: 1.2rem 1.5rem;
+    margin: 1.2rem auto;
   }
 }
 
@@ -46,7 +79,7 @@
   }
 
   .form {
-    padding: 1rem 1.5rem;
+    padding: 1rem 1rem;
     margin: 1rem auto;
   }
 }
