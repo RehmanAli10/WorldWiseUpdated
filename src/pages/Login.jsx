@@ -25,9 +25,10 @@ function Login() {
   // );
 
   function handleSubmit(e) {
+    e.preventDefault();
+
     if (!email || !password) return;
 
-    e.preventDefault();
     login({ email, password });
   }
 
