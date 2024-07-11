@@ -12,6 +12,7 @@ import styles from "./Form.module.css";
 import { useCreateCity } from "../hooks/useCreateCity";
 
 import { convertToEmoji } from "../utils/helpers";
+import { useUser } from "../hooks/useUser";
 
 const BASE_URL = "https://api.bigdatacloud.net/data/reverse-geocode-client";
 
@@ -26,6 +27,8 @@ function Form() {
   const [emoji, setEmoji] = useState("");
   const [lat, lng] = useUrlPosition();
   const [geoCodingError, setGeoCodingError] = useState("");
+
+  const { user } = useUser();
 
   useEffect(
     function () {
@@ -77,6 +80,7 @@ function Form() {
         lat,
         lng,
       },
+      userId: user?.id,
     };
     creatingCity(newCity);
     naviagte("/app/cities");
