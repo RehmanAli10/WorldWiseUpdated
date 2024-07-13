@@ -43,3 +43,12 @@ export async function logout() {
 
   if (error) throw new Error(error.message);
 }
+
+export async function signinwithGoogle() {
+  await supabase.auth.signInWithOAuth({
+    provider: "google",
+    options: {
+      redirectTo: `https://hsxmldybxbyxxrelibbm.supabase.co/auth/v1/callback`,
+    },
+  });
+}
