@@ -9,7 +9,7 @@ function Signup() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const { signup, isLoading } = useSignup();
+  const { signup } = useSignup();
 
   function handleSubmit(e) {
     e.preventDefault();

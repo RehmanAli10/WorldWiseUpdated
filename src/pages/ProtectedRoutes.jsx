@@ -3,18 +3,20 @@ import { useEffect } from "react";
 import { useUser } from "../hooks/useUser";
 
 function ProtectedRoutes({ children }) {
-  const { isAuthenticated } = useUser();
+  const { isAuthenticated, isLoading } = useUser();
 
   const navigate = useNavigate();
 
   useEffect(
     function () {
-      if (!isAuthenticated) navigate("/");
+      if (!isAuthenticated && !isLoading) {
+        navigate("/login");
+      }
     },
-    [isAuthenticated, navigate]
+    [isAuthenticated, navigate, isLoading]
   );
 
-  return isAuthenticated ? children : null;
+  if (isAuthenticated) return <>{children}</>;
 }
 
 export default ProtectedRoutes;

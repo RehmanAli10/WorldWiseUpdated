@@ -45,10 +45,16 @@ export async function logout() {
 }
 
 export async function signinwithGoogle() {
-  await supabase.auth.signInWithOAuth({
+  const { data, error } = await supabase.auth.signInWithOAuth({
     provider: "google",
     options: {
       redirectTo: `http://localhost:5173/app`,
     },
   });
+
+  if (error) {
+    throw new Error(error.message);
+  }
+
+  return data;
 }
