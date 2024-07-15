@@ -4,4 +4,35 @@
   overscroll-behavior-y: none;
   display: flex;
   position: relative;
+  flex-direction: row;
+}
+
+.sidebar {
+  flex: 1;
+}
+
+.main {
+  flex: 1;
+}
+
+.user {
+  flex: 1;
+}
+
+.map {
+  flex: 3;
+}
+.userSidebar {
+  display: flex;
+}
+
+@media screen and (max-width: 1170px) {
+  .app {
+    flex-direction: column;
+    overflow: scroll;
+  }
+
+  .main {
+    flex-direction: column;
+  }
 }

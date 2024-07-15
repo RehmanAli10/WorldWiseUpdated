@@ -6,8 +6,10 @@
 .nav ul {
   list-style: none;
   display: flex;
+  justify-content: space-around;
   background-color: var(--color-dark--2);
   border-radius: 7px;
+  padding: 0.5rem;
 }
 
 .nav a:link,
@@ -25,4 +27,25 @@
 /* CSS Modules feature */
 .nav a:global(.active) {
   background-color: var(--color-dark--0);
+}
+
+/* Responsive styling */
+@media screen and (max-width: 1170px) {
+  .nav ul {
+    justify-content: space-evenly;
+  }
+  .nav {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .nav ul {
+    align-items: center;
+  }
+  .nav a:link,
+  .nav a:visited {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+  }
 }

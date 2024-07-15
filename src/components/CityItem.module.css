@@ -62,7 +62,6 @@
   .cityItem,
   .cityItem:link,
   .cityItem:visited {
-    flex-direction: column;
     align-items: flex-start;
   }
 

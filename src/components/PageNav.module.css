@@ -36,7 +36,7 @@ a.ctaLink:visited {
 /* Media Queries for Responsiveness */
 
 /* Desktops and larger tablets */
-@media (max-width: 1076px) {
+@media screen and (max-width: 1076px) {
   .nav {
     margin-bottom: 2.6rem;
   }
@@ -46,6 +46,7 @@ a.ctaLink:visited {
 @media (max-width: 790px) {
   .nav ul {
     gap: 2rem;
+    align-items: center;
   }
 
   .nav a:link,
@@ -62,7 +63,7 @@ a.ctaLink:visited {
 @media (max-width: 770px) {
   .nav ul {
     gap: 2rem;
-    margin: 3.2rem;
+    margin-top: 1.2rem;
   }
 
   .nav a:link,

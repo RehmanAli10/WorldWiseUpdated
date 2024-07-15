@@ -17,3 +17,19 @@
   font-size: 1.2rem;
   color: var(--color-light--1);
 }
+
+@media screen and (max-width: 1170px) {
+  .sidebar {
+    flex-basis: auto;
+    width: 100%;
+    height: auto;
+    padding: 2rem;
+    align-items: stretch;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .sidebar {
+    padding: 1rem;
+  }
+}
