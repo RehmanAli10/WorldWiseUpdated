@@ -48,7 +48,7 @@ export async function signinwithGoogle() {
   await supabase.auth.signInWithOAuth({
     provider: "google",
     options: {
-      redirectTo: `https://hsxmldybxbyxxrelibbm.supabase.co/auth/v1/callback`,
+      redirectTo: `http://localhost:5173/app`,
     },
   });
 }
