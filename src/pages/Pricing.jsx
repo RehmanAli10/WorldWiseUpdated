@@ -1,5 +1,6 @@
 import PageNav from "../components/PageNav";
 import styles from "./Product.module.css";
+import PricingImage from "../public/img-2.jpg";
 
 export default function Pricing() {
   return (
@@ -19,7 +20,7 @@ export default function Pricing() {
           </p>
         </div>
         <img
-          src="/src/public/img-2.jpg"
+          src={PricingImage}
           alt="overview of a large city with skyscrapers"
         />
       </section>
