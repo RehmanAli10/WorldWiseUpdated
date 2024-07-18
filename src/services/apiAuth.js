@@ -48,7 +48,7 @@ export async function signinwithGoogle() {
   const { data, error } = await supabase.auth.signInWithOAuth({
     provider: "google",
     options: {
-      redirectTo: `https://world-wise-updated.vercel.app/app/cities`,
+      redirectTo: `https://world-wise-updated.vercel.app/app`,
     },
   });
 
