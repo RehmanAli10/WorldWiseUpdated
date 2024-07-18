@@ -50,7 +50,7 @@
 /* Media Queries for Responsiveness */
 
 /* Tablets and below */
-@media (max-width: 878px) {
+@media screen and (max-width: 878px) {
   .homepage {
     margin: 2rem;
     padding: 2rem 3rem;
@@ -67,5 +67,11 @@
   .cta {
     font-size: 1.25rem;
     padding: 0.6rem 1.2rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .homepage h1 {
+    font-size: 2.6rem;
   }
 }

@@ -43,7 +43,7 @@ a.ctaLink:visited {
 }
 
 /* Tablets and below */
-@media (max-width: 790px) {
+@media screen and (max-width: 790px) {
   .nav ul {
     gap: 2rem;
     align-items: center;
@@ -78,17 +78,17 @@ a.ctaLink:visited {
 }
 
 /* Mobile devices */
-@media (max-width: 480px) {
+@media screen and (max-width: 480px) {
   .nav {
-    flex-direction: column;
     align-items: flex-start;
   }
 
   .nav ul {
-    flex-direction: column;
-    gap: 1.6rem;
+    gap: 2.6rem;
+    margin-top: 2.2rem;
     width: 100%;
     justify-content: center;
+    align-items: center;
   }
 
   .nav a:link,
