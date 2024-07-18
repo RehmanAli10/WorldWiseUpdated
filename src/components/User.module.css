@@ -79,5 +79,11 @@
 @media screen and (max-width: 480px) {
   .user {
     font-size: 1rem;
+    margin-left: 2rem;
+  }
+}
+@media screen and (max-width: 466px) {
+  .user {
+    margin-left: 2rem;
   }
 }
