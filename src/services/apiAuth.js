@@ -44,11 +44,11 @@ export async function logout() {
   if (error) throw new Error(error.message);
 }
 
-export async function signinwithGoogle(url) {
+export async function signinwithGoogle() {
   const { data, error } = await supabase.auth.signInWithOAuth({
     provider: "google",
     options: {
-      redirectTo: `https://world-wise-updated.vercel.app/app#${url}`,
+      redirectTo: `https://world-wise-updated.vercel.app`,
     },
   });
 
