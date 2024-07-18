@@ -20,6 +20,7 @@ export function useSignedinwithGoogle() {
       queryClient.invalidateQueries({
         queryKey: ["user"],
       });
+
       navigate("/app", { replace: true });
     },
     onError: (err) => toast.error(err.message),
