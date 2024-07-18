@@ -14,7 +14,7 @@ export function useSignedinwithGoogle() {
     mutate: signinwithGoogle,
     error,
   } = useMutation({
-    mutationFn: signinwithGoogleApi,
+    mutationFn: () => signinwithGoogleApi(data?.url),
     onSuccess: () => {
       toast.success("Signed in successfully");
       queryClient.invalidateQueries({
