@@ -1,14 +1,11 @@
 import { Link } from "react-router-dom";
 import styles from "./Logo.module.css";
+import ApplicationLogo from "../public/logo.png";
 
 function Logo() {
   return (
     <Link to="/">
-      <img
-        src="/src/public/logo.png"
-        alt="WorldWise logo"
-        className={styles.logo}
-      />
+      <img src={ApplicationLogo} alt="WorldWise logo" className={styles.logo} />
     </Link>
   );
 }
