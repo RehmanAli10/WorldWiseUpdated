@@ -87,3 +87,16 @@
     margin-left: 2rem;
   }
 }
+
+@media screen and (max-width: 440px) {
+  .user {
+    font-size: 0.9rem;
+    margin-left: 31rem;
+  }
+  .user span {
+    margin-top: 0.6rem;
+  }
+  .user button {
+    margin-top: 0.3rem;
+  }
+}
