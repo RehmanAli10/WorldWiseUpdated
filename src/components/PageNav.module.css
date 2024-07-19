@@ -101,3 +101,9 @@ a.ctaLink:visited {
     padding: 0.5rem 1rem;
   }
 }
+
+@media screen and (max-width: 440px) {
+  .nav ul {
+    margin-left: 2rem;
+  }
+}
