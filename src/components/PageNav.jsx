@@ -1,20 +1,40 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { NavLink } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
 
 import Logo from "./Logo";
 import styles from "./PageNav.module.css";
+import useClickOutside from "../hooks/useClickOutside";
 
 function PageNav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isAnimating, setIsAnimating] = useState(false);
+  const menuRef = useRef(null);
 
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  function toggleMenu() {
+    if (isMenuOpen) {
+      setIsAnimating(true);
+      setTimeout(() => {
+        setIsMenuOpen(false);
+        setIsAnimating(false);
+      }, 1000);
+    } else {
+      setIsMenuOpen(true);
+    }
+  }
+
+  function handleCloseMenu() {
+    setIsMenuOpen(false);
+    setIsAnimating(false);
+  }
+
+  useClickOutside(menuRef, isMenuOpen, handleCloseMenu);
 
   return (
-    <nav className={styles.nav}>
+    <nav className={styles.nav} ref={menuRef}>
       <Logo />
       <div className={styles.hamburger} onClick={toggleMenu}>
-        {isMenuOpen ? (
+        {isMenuOpen && !isAnimating ? (
           <div className={styles.crossiconContainer}>
             <FaTimes />
           </div>
@@ -22,7 +42,11 @@ function PageNav() {
           <FaBars className={styles.hamburgerIcon} />
         )}
       </div>
-      <ul className={`${styles.menu} ${isMenuOpen ? styles.menuOpen : ""}`}>
+      <ul
+        className={`${styles.menu} ${
+          isMenuOpen ? (isAnimating ? styles.menuClose : styles.menuOpen) : ""
+        }`}
+      >
         <li>
           <NavLink to="/pricing">Pricing</NavLink>
         </li>

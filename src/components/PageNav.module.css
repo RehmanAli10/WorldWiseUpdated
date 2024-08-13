@@ -30,7 +30,6 @@
   font-weight: 600;
 }
 
-/* CSS Modules feature */
 .nav a:global(.active) {
   color: var(--color-brand--2);
 }
@@ -96,6 +95,13 @@ a.ctaLink:visited {
   .menuOpen {
     display: flex;
     padding: 1.8rem;
+    animation: show 1s forwards;
+  }
+
+  .menuClose {
+    display: flex;
+    padding: 1.8rem;
+    animation: hide 1s forwards;
   }
 
   .nav a {
@@ -108,8 +114,25 @@ a.ctaLink:visited {
   }
 }
 
-@media (max-width: 440px) {
-  .menu {
-    margin-left: 2rem;
+/* animations */
+@keyframes show {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+@keyframes hide {
+  from {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-100%);
   }
 }
