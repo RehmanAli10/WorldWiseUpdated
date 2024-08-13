@@ -4,11 +4,21 @@
   justify-content: space-between;
 }
 
-.nav ul {
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  margin-top: 1.6rem;
+}
+
+.menu {
   list-style: none;
   display: flex;
+  justify-content: center;
   align-items: center;
   gap: 4rem;
+  padding: 0;
+  margin: 0;
 }
 
 .nav a:link,
@@ -33,77 +43,73 @@ a.ctaLink:visited {
   border-radius: 7px;
 }
 
-/* Media Queries for Responsiveness */
-
-/* Desktops and larger tablets */
-@media screen and (max-width: 1076px) {
+@media (max-width: 1076px) {
   .nav {
     margin-bottom: 2.6rem;
   }
 }
 
-/* Tablets and below */
-@media screen and (max-width: 790px) {
-  .nav ul {
+@media (max-width: 790px) {
+  .menu {
     gap: 2rem;
-    align-items: center;
   }
 
-  .nav a:link,
-  .nav a:visited {
+  .nav a {
     font-size: 1.2rem;
   }
 
-  a.ctaLink:link,
-  a.ctaLink:visited {
+  .ctaLink {
     padding: 0.6rem 1.5rem;
   }
 }
 
-@media (max-width: 770px) {
-  .nav ul {
+@media (max-width: 650px) {
+  .hamburger {
+    display: block;
+  }
+
+  .hamburgerIcon {
+    height: 5.6rem;
+  }
+
+  .crossiconContainer {
+    position: absolute;
+    z-index: 10000;
+    top: 0;
+    bottom: 0;
+    margin-top: 0.8rem;
+  }
+
+  .menu {
+    display: none;
+    background-color: var(--color-dark--1);
+    flex-direction: column;
     gap: 2rem;
-    margin-top: 1.2rem;
-  }
-
-  .nav a:link,
-  .nav a:visited {
-    font-size: 1.2rem;
-  }
-
-  a.ctaLink:link,
-  a.ctaLink:visited {
-    padding: 0.6rem 1.5rem;
-  }
-}
-
-/* Mobile devices */
-@media screen and (max-width: 480px) {
-  .nav {
-    align-items: flex-start;
-  }
-
-  .nav ul {
-    gap: 2.6rem;
-    margin-top: 2.2rem;
     width: 100%;
-    justify-content: center;
-    align-items: center;
+    position: absolute;
+    margin-left: 0;
+    top: 0;
+    left: 0;
+    z-index: 1000;
   }
 
-  .nav a:link,
-  .nav a:visited {
+  .menuOpen {
+    display: flex;
+    padding: 1.8rem;
+  }
+
+  .nav a {
     font-size: 1rem;
   }
 
-  a.ctaLink:link,
-  a.ctaLink:visited {
+  .ctaLink {
     padding: 0.5rem 1rem;
+    margin-bottom: 1.2rem;
   }
 }
 
-@media screen and (max-width: 440px) {
-  .nav ul {
+@media (max-width: 440px) {
+  .menu {
     margin-left: 2rem;
   }
 }

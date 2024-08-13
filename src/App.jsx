@@ -67,6 +67,7 @@ function App() {
           success: {
             duration: 3000,
           },
+
           error: {
             duration: 5000,
           },
