@@ -70,8 +70,38 @@
   }
 }
 
+@media screen and (max-width: 650px) {
+  .homepage h1 {
+    font-size: 3.2rem;
+  }
+
+  .homepage section {
+    gap: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .homepage h1 {
+    font-size: 2.8rem;
+  }
+
+  .homepage section {
+    gap: 1.2rem;
+  }
+}
+
 @media screen and (max-width: 480px) {
   .homepage h1 {
-    font-size: 2.6rem;
+    font-size: 2.2rem;
+  }
+
+  .homepage section {
+    gap: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 442px) {
+  .homepage section {
+    gap: 1.2rem;
   }
 }
