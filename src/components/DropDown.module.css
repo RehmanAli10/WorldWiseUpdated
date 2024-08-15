@@ -1,0 +1,226 @@
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropDownContainer {
+  position: absolute;
+  top: 8.2rem;
+  left: 40.6rem;
+  background-color: var(--color-dark--2);
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  z-index: 1000;
+  justify-content: flex-start;
+  align-items: center;
+  height: 10.6rem;
+  padding: 1.6rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  animation: fadeInDown 0.3s ease forwards;
+}
+
+.user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.user img {
+  height: 3.2rem;
+  border-radius: 2.2rem;
+}
+
+.dropDownContainer button {
+  background-color: var(--color-dark--2);
+  border-radius: 7px;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  color: inherit;
+  font-family: inherit;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dropDownContainer button:hover {
+  background-color: var(--color-dark--3);
+}
+
+@media screen and (max-width: 639px) {
+  .dropDownContainer {
+    left: 39.6rem;
+  }
+}
+
+@media screen and (max-width: 623px) {
+  .dropDownContainer {
+    left: 38.6rem;
+  }
+}
+
+@media screen and (max-width: 616px) {
+  .dropDownContainer {
+    left: 37.6rem;
+  }
+}
+
+@media screen and (max-width: 605px) {
+  .dropDownContainer {
+    left: 36.6rem;
+  }
+}
+
+@media screen and (max-width: 596px) {
+  .dropDownContainer {
+    left: 35.6rem;
+  }
+}
+
+@media screen and (max-width: 584px) {
+  .dropDownContainer {
+    left: 34.6rem;
+  }
+}
+
+@media screen and (max-width: 577px) {
+  .dropDownContainer {
+    left: 33.6rem;
+  }
+}
+
+@media screen and (max-width: 566px) {
+  .dropDownContainer {
+    left: 32.6rem;
+  }
+}
+
+@media screen and (max-width: 557px) {
+  .dropDownContainer {
+    left: 31.6rem;
+  }
+}
+
+@media screen and (max-width: 546px) {
+  .dropDownContainer {
+    left: 30.6rem;
+  }
+}
+
+@media screen and (max-width: 537px) {
+  .dropDownContainer {
+    left: 29.6rem;
+  }
+}
+
+@media screen and (max-width: 537px) {
+  .dropDownContainer {
+    left: 29.6rem;
+  }
+}
+
+@media screen and (max-width: 525px) {
+  .dropDownContainer {
+    left: 28.6rem;
+  }
+}
+
+@media screen and (max-width: 517px) {
+  .dropDownContainer {
+    left: 27.6rem;
+  }
+}
+
+@media screen and (max-width: 504px) {
+  .dropDownContainer {
+    left: 26.6rem;
+  }
+}
+
+@media screen and (max-width: 495px) {
+  .dropDownContainer {
+    left: 25.6rem;
+  }
+}
+
+@media screen and (max-width: 486px) {
+  .dropDownContainer {
+    left: 24.6rem;
+  }
+}
+
+@media screen and (max-width: 477px) {
+  .dropDownContainer {
+    left: 23.6rem;
+  }
+}
+
+@media screen and (max-width: 465px) {
+  .dropDownContainer {
+    left: 22.6rem;
+  }
+}
+
+@media screen and (max-width: 465px) {
+  .dropDownContainer {
+    left: 22.6rem;
+  }
+}
+
+@media screen and (max-width: 456px) {
+  .dropDownContainer {
+    left: 21.6rem;
+  }
+}
+
+@media screen and (max-width: 445px) {
+  .dropDownContainer {
+    left: 20.6rem;
+  }
+}
+
+@media screen and (max-width: 445px) {
+  .dropDownContainer {
+    left: 20.6rem;
+  }
+}
+
+@media screen and (max-width: 435px) {
+  .dropDownContainer {
+    left: 19.6rem;
+  }
+}
+
+@media screen and (max-width: 435px) {
+  .dropDownContainer {
+    left: 19.6rem;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .dropDownContainer {
+    left: 17.6rem;
+  }
+}
+
+@media screen and (max-width: 404px) {
+  .dropDownContainer {
+    left: 16.6rem;
+  }
+}
+
+@media screen and (max-width: 395px) {
+  .dropDownContainer {
+    left: 15.6rem;
+  }
+}
