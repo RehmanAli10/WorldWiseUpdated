@@ -33,11 +33,11 @@ function User() {
     setIsOpen(!isOpen);
   }
 
-  function handleCloseMenu() {
+  function handleCloseDropdown() {
     setIsOpen(false);
   }
 
-  useClickOutside(dropDownMenuRef, isOpen, handleCloseMenu);
+  useClickOutside(dropDownMenuRef, isOpen, handleCloseDropdown);
 
   return (
     <>
@@ -55,7 +55,7 @@ function User() {
         <button onClick={handleLogout}>Logout</button>
       </div>
 
-      <div className={styles.threeDotsContainer}>
+      <div className={styles.threeDotsContainer} ref={dropDownMenuRef}>
         <BsThreeDotsVertical onClick={handleDropDown} />
       </div>
     </>
