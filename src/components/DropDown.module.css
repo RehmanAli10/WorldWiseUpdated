@@ -54,7 +54,7 @@
 }
 
 .dropDownContainer button:hover {
-  background-color: var(--color-dark--3);
+  background-color: var(--color-light--1);
 }
 
 @media screen and (max-width: 639px) {

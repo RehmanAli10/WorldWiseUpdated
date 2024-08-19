@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { BsThreeDotsVertical } from "react-icons/bs";
 
 import { useLogout } from "../hooks/useLogout";
@@ -7,13 +7,13 @@ import ProfileIcon from "../public/profileIcon.jpg";
 
 import styles from "./User.module.css";
 import DropDown from "./DropDown";
-import useClickOutside from "../hooks/useClickOutside";
+import { useClickOutside } from "../hooks/useClickOutside";
 
 function User() {
   const [isOpen, setIsOpen] = useState(false);
   const { logout } = useLogout();
   const { user } = useUser();
-  const dropDownMenuRef = useRef(null);
+  const { ref } = useClickOutside(handleDropDownClose, false);
 
   const options = [
     {
@@ -33,15 +33,13 @@ function User() {
     setIsOpen(!isOpen);
   }
 
-  function handleCloseDropdown() {
+  function handleDropDownClose() {
     setIsOpen(false);
   }
 
-  useClickOutside(dropDownMenuRef, isOpen, handleCloseDropdown);
-
   return (
     <>
-      {isOpen && <DropDown options={options} handleClick={handleLogout} />}
+      {isOpen && <DropDown options={options} handleLogout={handleLogout} />}
       <div className={styles.user}>
         <img
           src={
@@ -55,7 +53,7 @@ function User() {
         <button onClick={handleLogout}>Logout</button>
       </div>
 
-      <div className={styles.threeDotsContainer} ref={dropDownMenuRef}>
+      <div className={styles.threeDotsContainer} ref={ref}>
         <BsThreeDotsVertical onClick={handleDropDown} />
       </div>
     </>

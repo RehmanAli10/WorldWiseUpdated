@@ -1,15 +1,15 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
 
 import Logo from "./Logo";
 import styles from "./PageNav.module.css";
-import useClickOutside from "../hooks/useClickOutside";
+import { useClickOutside } from "../hooks/useClickOutside";
 
 function PageNav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
-  const menuRef = useRef(null);
+  const { ref } = useClickOutside(handleCloseMenu);
 
   function toggleMenu() {
     if (isMenuOpen) {
@@ -28,10 +28,8 @@ function PageNav() {
     setIsAnimating(false);
   }
 
-  useClickOutside(menuRef, isMenuOpen, handleCloseMenu);
-
   return (
-    <nav className={styles.nav} ref={menuRef}>
+    <nav className={styles.nav} ref={ref}>
       <Logo />
       <div className={styles.hamburger} onClick={toggleMenu}>
         {isMenuOpen && !isAnimating ? (
